@@ -11,7 +11,7 @@ subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE, stdout=subproces
 
 for addpack_name in additional_packages:
     print(f'Installing {addpack_name}')
-    subprocess.Popen(["sudo","DEBIAN_FRONTEND=noninteractive","apt","-y","install",addpack_name],stdout=subprocess.STDOUT).wait()
+    subprocess.Popen(["sudo","DEBIAN_FRONTEND=noninteractive","apt","-y","install",addpack_name]).wait()
 
 packages_path = '/home/u/rubackup-latest/'
 packages = ["rubackup-server.deb", "rubackup-client.deb", "rubackup-common.deb", "rubackup-rbm.deb"]
