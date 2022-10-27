@@ -5,7 +5,8 @@ import subprocess
 
 additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","postgresql",]
 for addpack_name in additional_packages:
-    subprocess.Popen(["apt","install","pigz"])
+    print(f'Installing {addpack_name}.')
+    subprocess.Popen(["apt","install",addpack_name])
 
 packages_path = '/home/u/rubackup-latest/'
 packages = ["rubackup-server.deb", "rubackup-client.deb", "rubackup-common.deb", "rubackup-rbm.deb"]
