@@ -6,7 +6,7 @@ packages_path = '/home/u/rubackup-latest/'
 packages = ["rubackup-server.deb", "rubackup-client.deb", "rubackup-common.deb", "rubackup-rbm.deb"]
 
 for package_name in packages:
-    if os.path.isfile(packages_path):
+    if os.path.isfile(packages_path + package_name):
         print(f'Removing {package_name}...')
         os.remove(packages_path + package_name)
     else:
