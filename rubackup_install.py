@@ -1,6 +1,11 @@
 import wget
 import os
 import sys
+import subprocess
+
+additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","postgresql",]
+for addpack_name in additional_packages:
+    subprocess.Popen(["apt","install","pigz"])
 
 packages_path = '/home/u/rubackup-latest/'
 packages = ["rubackup-server.deb", "rubackup-client.deb", "rubackup-common.deb", "rubackup-rbm.deb"]
@@ -23,6 +28,8 @@ for package_name in packages:
         download_package(packages_path, package_name)
     else:
         download_package(packages_path, package_name)
+
+
 
 
 
