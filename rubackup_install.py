@@ -37,7 +37,7 @@ for package_name in packages:
         download_package(packages_path, package_name)
 
 for package_name in packages:
-    subprocess.Popen(["dpkg","-i",packages_path + package_name]).wait()
+    subprocess.Popen(["sudo","dpkg","-i",packages_path + package_name]).wait()
 
 
 
