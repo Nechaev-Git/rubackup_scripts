@@ -5,7 +5,7 @@ import os
 import sys
 import subprocess
 
-additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","postgresql","libqt5sql5-psql"]
+additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","postgresql","libqt5sql5-psql","qt5-default"]
 
 #subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE, stdout=subproces, stderr=subprocess.PIPE).communicate(input=b'31\n')
 subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE).communicate(input=b'31\n')
