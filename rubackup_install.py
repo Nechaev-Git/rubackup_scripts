@@ -8,10 +8,11 @@ import subprocess
 additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","postgresql",]
 
 subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate(input=b'31\n')
+subprocess.Popen(["sudo","DEBIAN_FRONTEND=noninteractive"])
 
 for addpack_name in additional_packages:
     print(f'Installing {addpack_name}')
-    subprocess.Popen(["sudo","apt","install",addpack_name],stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate(input=b'\n')
+    subprocess.Popen(["sudo","apt","-y","install",addpack_name])
 
 packages_path = '/home/u/rubackup-latest/'
 packages = ["rubackup-server.deb", "rubackup-client.deb", "rubackup-common.deb", "rubackup-rbm.deb"]
