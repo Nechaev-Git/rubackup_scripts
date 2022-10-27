@@ -4,18 +4,19 @@ import wget
 import os
 import subprocess
 
+os_username = subprocess.getoutput("whoami")
 additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","postgresql","libqt5sql5-psql","qt5-default"]
+packages_path = f'/home/{os_username}/rubackup-latest/'
+packages = ["rubackup-common.deb", "rubackup-client.deb", "rubackup-server.deb", "rubackup-rbm.deb"]
 
-subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE).communicate(input=b'31\n')
+
+subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE).communicate(input=b'3132333435\n')
 subprocess.Popen(["sudo","systemctl","stop","rubackup_server"]).wait()
 subprocess.Popen(["sudo","systemctl","stop","rubackup_client"]).wait()
 
 for addpack_name in additional_packages:
     print(f'Installing {addpack_name}')
     subprocess.Popen(["sudo","DEBIAN_FRONTEND=noninteractive","apt","-y","install",addpack_name]).wait()
-
-packages_path = '/home/u/rubackup-latest/'
-packages = ["rubackup-common.deb", "rubackup-client.deb", "rubackup-server.deb", "rubackup-rbm.deb"]
 
 def download_package(package_path, package):
     print(f'Downloading {package}.')
