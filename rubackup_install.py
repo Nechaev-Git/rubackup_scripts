@@ -12,7 +12,8 @@ def download_package(package_path, package):
 
 if os.path.exists(packages_path):
     print(f'{packages_path} is already exist')
-else
+else:
+    print(f'Creating directory {packages_path}')
     os.mkdir(packages_path)
 
 for package_name in packages:
