@@ -2,7 +2,6 @@
 
 import wget
 import os
-import sys
 import subprocess
 
 additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","postgresql","libqt5sql5-psql","qt5-default"]
@@ -37,7 +36,3 @@ for package_name in packages:
 
 for package_name in packages:
     subprocess.Popen(["sudo","dpkg","-i",packages_path + package_name]).wait()
-
-
-
-sys.exit(0)
