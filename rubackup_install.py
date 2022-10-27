@@ -15,7 +15,7 @@ for addpack_name in additional_packages:
     subprocess.Popen(["sudo","DEBIAN_FRONTEND=noninteractive","apt","-y","install",addpack_name]).wait()
 
 packages_path = '/home/u/rubackup-latest/'
-packages = ["rubackup-server.deb", "rubackup-client.deb", "rubackup-common.deb", "rubackup-rbm.deb"]
+packages = ["rubackup-common.deb", "rubackup-client.deb", "rubackup-server.deb", "rubackup-rbm.deb"]
 
 def download_package(package_path, package):
     print(f'Downloading {package}.')
@@ -36,7 +36,8 @@ for package_name in packages:
     else:
         download_package(packages_path, package_name)
 
-
+for package_name in packages:
+    subprocess.Popen(["dpkg","-i",packages_path + package_name]).wait()
 
 
 
