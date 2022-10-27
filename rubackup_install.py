@@ -7,6 +7,8 @@ import subprocess
 additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","postgresql","libqt5sql5-psql","qt5-default"]
 
 subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE).communicate(input=b'31\n')
+subprocess.Popen(["sudo","systemctl","stop","rubackup_server"]).wait()
+subprocess.Popen(["sudo","systemctl","stop","rubackup_client"]).wait()
 
 for addpack_name in additional_packages:
     print(f'Installing {addpack_name}')
