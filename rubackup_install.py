@@ -10,7 +10,7 @@ packages_path = f'/home/{os_username}/rubackup-latest/'
 packages = ["rubackup-common.deb", "rubackup-client.deb", "rubackup-server.deb", "rubackup-rbm.deb"]
 
 
-subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE).communicate(input=b'3132333435\n')
+subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE).communicate(input=b'31\n')
 subprocess.Popen(["sudo","systemctl","stop","rubackup_server"]).wait()
 subprocess.Popen(["sudo","systemctl","stop","rubackup_client"]).wait()
 
