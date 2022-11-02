@@ -7,7 +7,7 @@ import subprocess
 os_username = subprocess.getoutput("whoami")
 additional_packages = ["pigz","mailutils","xz-utils","nfs-common","libcurl4","nfs-kernel-server","libqt5sql5-psql","qt5-default"]
 packages_path = f'/home/{os_username}/rubackup-latest/'
-packages = ["rubackup-common.deb", "rubackup-client.deb", "rubackup-server.deb"]
+packages = ["rubackup-common.deb", "rubackup-client.deb", "rubackup-server.deb", "rubackup-rbm.deb"]
 
 
 subprocess.Popen(["sudo","apt","update"],stdin=subprocess.PIPE).communicate(input=b'31\n')
