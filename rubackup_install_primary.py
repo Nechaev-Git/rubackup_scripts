@@ -51,3 +51,5 @@ for package_name in packages:
 
 for package_name in packages:
     subprocess.Popen(["sudo", "dpkg", "-i", packages_path + package_name]).wait()
+
+subprocess.run("sudo systemctl daemon-reload", shell=True)
