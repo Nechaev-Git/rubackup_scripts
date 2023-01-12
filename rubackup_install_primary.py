@@ -31,7 +31,7 @@ for addpack_name in additional_packages:
 
 def download_package(package_path, package):
     print(f"Downloading {package}.")
-    url = f"http://10.177.32.37:8080/latest/deb/ubuntu/{package}"
+    url = f"http://10.177.32.37:8080/latest/deb/ubuntu_18.04/{package}"
     wget.download(url, f"{package_path}{package}")
 
 
